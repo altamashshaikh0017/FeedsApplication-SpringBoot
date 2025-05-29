@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create New Post</title>
+<!--  <link rel="stylesheet" href="CSS/style.css"> -->
+<style>
+/* General Styles */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: #333;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px auto;
+	max-width: 600px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header inside forms */
+form h1 {
+	font-size: 24px;
+	color: #007bff;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+/* Form Elements */
+form label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+
+form input[type="text"], form input[type="password"], form input[type="email"],
+	form textarea, form select {
+	width: calc(100% - 22px);
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+form button {
+	background-color: #ffa500; /*#007bff;*/
+	color: #fff;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+form button:hover {
+	background-color: #0056b3;
+}
+
+/* Links */
+a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Container for additional buttons or links */
+div {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.button-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.button {
+	display: inline-block;
+	padding: 7px 14px;
+	margin: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none; /* Removes underline */
+	color: #fff;
+	background-color: #ffa500; /*#007bff; Button background color */
+	border: none; /* Removes border */
+	border-radius: 5px; /* Rounded corners */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+	transition: background-color 0.3s, box-shadow 0.3s;
+	/* Smooth transition for hover effects */
+}
+
+.button:hover {
+	background-color: #0056b3; /*Darker background on hover */
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+	/* Enhanced shadow on hover */
+}
+
+.button:active {
+	background-color: #004494; /* Even darker background when clicked */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
+
+textarea {
+	height: 100px;
+	resize: vertical;
+}
+</style>
+</head>
+<body>
+	<h1>Create a New Post</h1>
+	<form action="/createPost" method="post" th:object="${post}">
+
+		<label for="title">Title:</label> <input type="text" id="title"
+			name="title" th:field="*{title}" required> <label
+			for="content">Post Content:</label>
+		<textarea id="content" name="content" th:field="*{content}" required></textarea>
+
+		<button type="submit">Create Post</button>
+	</form>
+
+	<div class="button-container">
+		<a href="/viewPosts" class="button">View Posts </a>
+		 <a href="/viewOtherUsersPosts"class="button">View Other User's Posts</a>
+	</div>
+	<a href="/createPost" class="button">Create a new post</a>
+    <a href="/logout" class="button">Logout</a>
+</body>
+</html>
