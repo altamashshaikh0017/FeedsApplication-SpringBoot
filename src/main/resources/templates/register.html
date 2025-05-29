@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+<style>
+/* Your existing styles here (unchanged) */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: #333;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+form {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px auto;
+	max-width: 600px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form h1 {
+	font-size: 24px;
+	color: #007bff;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+form label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+
+form input[type="text"], form input[type="password"], form input[type="email"],
+	form textarea, form select {
+	width: calc(100% - 22px);
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+form button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+form button:hover {
+	background-color: #0056b3;
+}
+
+a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+	<h1>Sign Up</h1>
+	<form th:action="@{/signUp}" th:object="${admin}" method="post">
+
+		<label>Name:</label> <input type="text" th:field="*{name}" /><br />
+
+		<label>Username:</label> <input type="text" th:field="*{username}" /><br />
+
+		<label>Password:</label> <input type="password" th:field="*{password}" /><br />
+
+		<label>Email:</label> <input type="email" th:field="*{email}" /><br />
+
+		<label>Contact No.:</label> <input type="text"
+			th:field="*{contactNumber}" /><br /> <label>Role:</label> <select
+			th:field="*{role}">
+			<option value="USER">USER</option>
+			<option value="ADMIN">ADMIN</option>
+		</select><br />
+
+		<button type="submit">Register</button>
+	</form>
+	<div th:if="${message}" style="color: green;">
+		<p th:text="${message}"></p>
+	</div>
+</body>
+</html>

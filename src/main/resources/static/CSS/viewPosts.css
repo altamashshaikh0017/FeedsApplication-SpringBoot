@@ -1,0 +1,70 @@
+/* Styles for viewing posts */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+p {
+    margin: 10px 0;
+}
+
+a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;s
+    padding: 7px 14px;
+    margin: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; /* Removes underline */
+    color: #fff;
+    background-color: #ffa500; /*Button background color */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.button:hover {
+    background-color: #0056b3;  /*Darker background on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.button:active {
+    background-color: #004494; /* Even darker background when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
